@@ -241,6 +241,7 @@ function RdvList({ email }) {
               <th className="px-4 py-3 text-right">Facture</th>
               <th className="px-4 py-3">Paiement</th>
               <th className="px-4 py-3">Pris par</th>
+              <th className="px-4 py-3">Commentaire</th>
               <th className="px-4 py-3"></th>
             </tr>
           </thead>
@@ -262,6 +263,7 @@ function RdvList({ email }) {
                 </td>
                 <td className="px-4 py-3">{r.moyens_paiement?.libelle}</td>
                 <td className="px-4 py-3 text-slate-500">{r.rdv_pris_par}</td>
+                <td className="px-4 py-3 text-slate-500">{r.commentaire}</td>
                 <td className="whitespace-nowrap px-4 py-3 text-right">
                   <button onClick={() => startEdit(r)}
                     className="mr-2 text-indigo-600 hover:underline">
