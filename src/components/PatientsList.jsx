@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { supabase } from '../supabase/supabaseClient'
+import { Trash2 } from 'lucide-react'
 
 const field =
   'w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-200'
@@ -89,9 +90,14 @@ function PatientsList({ profile }) {
               )}
             </span>
             {isAdmin && (
-              <button onClick={() => handleDelete(p.id)} className="text-sm text-red-600 hover:underline">
-                Supprimer
-              </button>
+              <button
+  onClick={() => handleDelete(p.id)}
+  title="Supprimer"
+  aria-label="Supprimer"
+  className="rounded-md p-2 text-red-600 hover:bg-red-50"
+>
+  <Trash2 size={18} />
+</button>
             )}
           </li>
         ))}

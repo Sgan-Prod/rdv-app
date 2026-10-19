@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { supabase } from '../supabase/supabaseClient'
+import { Pencil, Trash2 } from 'lucide-react'
 
 function RefTable({ table, column, titre }) {
   const [rows, setRows] = useState([])
@@ -65,10 +66,16 @@ function RefTable({ table, column, titre }) {
         {rows.map((r) => (
           <li key={r.id} className="flex items-center justify-between py-2">
             <span>{r[column]}</span>
-            <span className="text-sm">
-              <button onClick={() => rename(r)} className="mr-3 text-indigo-600 hover:underline">Renommer</button>
-              <button onClick={() => remove(r)} className="text-red-600 hover:underline">Supprimer</button>
-            </span>
+            <span className="flex gap-1">
+  <button onClick={() => rename(r)} title="Renommer" aria-label="Renommer"
+    className="rounded-md p-2 text-indigo-600 hover:bg-indigo-50">
+    <Pencil size={18} />
+  </button>
+  <button onClick={() => remove(r)} title="Supprimer" aria-label="Supprimer"
+    className="rounded-md p-2 text-red-600 hover:bg-red-50">
+    <Trash2 size={18} />
+  </button>
+</span>
           </li>
         ))}
         {rows.length === 0 && <li className="py-3 text-slate-400">Aucun élément</li>}
