@@ -13,7 +13,7 @@ function Layout({ email }) {
     <div className="min-h-screen bg-slate-50 text-slate-800">
       <header className="border-b border-slate-200 bg-white">
         <nav className="mx-auto flex max-w-6xl items-center gap-2 px-4 py-3">
-          <span className="mr-4 text-lg font-bold text-indigo-600">Cabinet</span>
+          <img src="/images/logo_podo.png" alt="Cabinet" className="mr-4 h-8 w-auto" />
           <NavLink to="/rendez-vous" className={linkClass}>Rendez-vous</NavLink>
           <NavLink to="/patients" className={linkClass}>Patients</NavLink>
 
