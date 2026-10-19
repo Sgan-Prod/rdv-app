@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { supabase } from '../supabase/supabaseClient'
+import { Pencil, Trash2 } from 'lucide-react'
 
 const SELECT_RDV =
   '*, patients(nom), statuts(libelle), moyens_paiement(libelle), etablissements(nom)'
@@ -271,16 +272,26 @@ function RdvList({ profile }) {
                 <td className="whitespace-nowrap px-4 py-3 text-right tabular-nums">{formatEuro(r.facture)}</td>
                 <td className="px-4 py-3">{r.moyens_paiement?.libelle}</td>
                 <td className="px-4 py-3 text-slate-500">{r.rdv_pris_par}</td>
-                <td className="whitespace-nowrap px-4 py-3 text-right">
-                  <button onClick={() => startEdit(r)} className="mr-2 text-indigo-600 hover:underline">
-                    Modifier
-                  </button>
-                  {isAdmin && (
-                    <button onClick={() => handleDelete(r.id)} className="text-red-600 hover:underline">
-                      Supprimer
-                    </button>
-                  )}
-                </td>
+   <td className="whitespace-nowrap px-4 py-3 text-right">
+  <button
+    onClick={() => startEdit(r)}
+    title="Modifier"
+    aria-label="Modifier"
+    className="mr-1 rounded-md p-2 text-indigo-600 hover:bg-indigo-50"
+  >
+    <Pencil size={18} />
+  </button>
+  {isAdmin && (
+    <button
+      onClick={() => handleDelete(r.id)}
+      title="Supprimer"
+      aria-label="Supprimer"
+      className="rounded-md p-2 text-red-600 hover:bg-red-50"
+    >
+      <Trash2 size={18} />
+    </button>
+  )}
+</td>
               </tr>
             ))}
             {rdvsAffiches.length === 0 && (
