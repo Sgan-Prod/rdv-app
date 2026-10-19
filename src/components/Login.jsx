@@ -25,7 +25,7 @@ function Login() {
         onSubmit={handleSubmit}
         className="w-full max-w-sm space-y-4 rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
       >
-        <img src="/logo_podo.png" alt="Cabinet" className="mx-auto mb-2 h-20 w-auto" />
+        <img src="images/logo_podo.png" alt="Cabinet" className="mx-auto mb-2 h-20 w-auto" />
     
         <h2 className="text-center text-xl font-semibold">Connexion</h2>
 
