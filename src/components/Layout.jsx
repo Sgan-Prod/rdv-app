@@ -14,7 +14,7 @@ function Layout({ profile }) {
       <header className="border-b border-slate-200 bg-white">
         <nav className="mx-auto flex max-w-6xl flex-wrap items-center gap-2 px-4 py-3">
           <img src="/images/logo_podo.png" alt="Cabinet" className="mr-4 h-16 w-auto" />
-          <NavLink to="/rendez-vous" className={linkClass}>Rendez-vous</NavLink>
+          <NavLink to="/rendez-vous" className={linkClass}>Soins</NavLink>
           <NavLink to="/patients" className={linkClass}>Patients</NavLink>
           {isAdmin && (
             <>
